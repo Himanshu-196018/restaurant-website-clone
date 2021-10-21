@@ -18,7 +18,10 @@ body{
 }
 .container{
     padding: 65px 50px;
-    min-height: 100vh;
+    /* min-width: 100vw; */
+    display: grid;
+    /* justify-content: center; */
+    grid-gap: 20px;
 }
 .navbar{
     min-height: 85px;
@@ -137,7 +140,7 @@ button{
 .gallary{
     display: grid;
     margin-top: 20px;
-    grid-gap: 10px;
+    grid-gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 .gallary h2{
@@ -162,5 +165,23 @@ button{
     background: linear-gradient(to right , var(--yellow), transparent);
 }
 .gallary img{
-    max-width: 100%;
+    width: 100%;
 } 
+/* making responsive from here  */
+@media (max-width:700px) {
+    .part1{
+        grid-template-areas: 'imgt imgt'
+        'box1 box2';
+    }
+    .about{
+        grid-template-columns: none;
+    }
+}
+
+@media (max-width:520px){
+    .part1{
+        grid-template-areas: 'imgt imgt'
+        'box1 box1'
+        'box2 box2';
+    }
+}
