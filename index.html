@@ -7,11 +7,17 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Web Site</title>
     <link rel="stylesheet" href="stye.css">
+    
 </head>
 
 <body>
     <div class="container">
         <nav class="navbar">
+            <button aria-expanded="false" aria-controls="ele">
+                <span class="open">&equiv;</span>
+                <span class="close">&Cross;</span>
+                Menu
+            </button>
             <ul class="ele">
                 <li><a href="#">TACOS</a></li>
                 <li><a href="#">BEERS</a></li>
@@ -83,6 +89,15 @@
             <img src="https://source.unsplash.com/random/205x202" alt="None">
         </div>
     </div>
+    <!-- js here -->
+    <script>
+        const navBtn = document.querySelector('button[aria-expanded]');
+        function toggleNav({target}){
+            const expended = target.getAttribute('aria-expanded') === 'true' || false;
+            navBtn.setAttribute('aria-expanded', !expended);
+        }
+        navBtn.addEventListener("click", toggleNav);
+    </script>
 </body>
 
 </html>
